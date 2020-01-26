@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App;
+use App\Perfil;
+use PDF;
 class perfilController extends Controller
 {
     public function mostrar()
@@ -27,7 +28,7 @@ class perfilController extends Controller
 	// }
 
 	public function guardar(Request $request){
-		 $per = new App\Perfil();
+		 $per = new Perfil;
 		 $per->email=$request->email;
 		 $per->nombre=$request->nombre;
 		 $per->apellido=$request->apellido;
@@ -47,7 +48,13 @@ class perfilController extends Controller
 		//dd($per->estarinformadoboletin);
 
 	}
-
-	
+    public function mostrarInscritos(){
+		$inscritos=Perfil::all();
+		return view('inscritos',compact('inscritos'));
+	}
+	public function reporteInscritos(){
+		$inscritos=Perfil::all();
+		return PDF::loadView('reporteinscritos', ['inscritos'=>$inscritos])->stream('archivo.pdf');
+	}
 
 }

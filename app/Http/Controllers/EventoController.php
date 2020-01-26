@@ -29,5 +29,19 @@ class EventoController extends Controller
         return redirect()->route('eventos');
 
     }
+
+    public function editarEvento($id){
+        $objetivo=Evento::find($id);
+        return view('editareventos',compact('objetivo'));
+    }
+    public function actualizarEvento(Request $request, $id){
+        $event=evento::find($id);
+        $event->descripcion = $request->descripcion;
+        $event->actividad = $request->actividad;
+        $event->dia = $request->dia;
+        $event->hora = $request->hora;
+        $event->save();
+        return redirect()->route('eventos');
+    }
     
 }

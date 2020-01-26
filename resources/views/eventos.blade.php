@@ -41,6 +41,7 @@
           <th scope="col">Hora</th>
           <th scope="col">Dia</th>
           <th scope="col">Eliminar</th>
+          <th scope="col">Editar</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +52,7 @@
           <td>{{ $item ->hora }}</td>
           <td>{{ $item ->dia }}</td>
           <td><a href="{{ route('eliminarevento',[$item->id]) }}"> Eliminar </a></td>
+          <td><a href="{{ route('editarevento',[$item->id]) }}"> Editar </a></td>
         </tr>
         @endforeach
       </tbody>

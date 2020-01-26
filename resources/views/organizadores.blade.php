@@ -65,6 +65,7 @@
                     <th scope="col">E-Mail</th>
                     <th scope="col">Foto</th>
                     <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -78,8 +79,9 @@
                     <td>{{ $item ->linkedin }}</td>
                     <td>{{ $item ->sitioweb }}</td>
                     <td>{{ $item ->email }}</td>
-                    <td><img src="images/organizadores/{{ $item ->imagen }}" alt=""></td>
+                    <td><img src="images/organizadores/{{ $item ->imagen }}" alt=""class="img-thumbnail" width="75"></td>
                     <td><a href="{{ route('eliminarorganizador',[$item->id]) }}"> Eliminar </a></td>
+                    <td><a href="{{ route('editarorganizador',[$item->id]) }}"> Editar </a></td>
                 </tr>
                 @endforeach
             </tbody>

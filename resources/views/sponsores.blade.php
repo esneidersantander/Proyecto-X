@@ -43,6 +43,7 @@
                     <th scope="col">Sitio Web</th>
                     <th scope="col">Foto</th>
                     <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,8 +51,9 @@
                 <tr>
                     <td>{{ $item ->nivel }}</td>
                     <td>{{ $item ->sitioweb }}</td>
-                    <td><img src="images/sponsores/{{ $item ->imagen }}" alt=""></td>
+                    <td><img src="images/sponsores/{{ $item ->imagen }}" alt="" class="img-thumbnail" width="100"></td>
                     <td><a href="{{ route('eliminarsponsor',[$item->id]) }}"> Eliminar </a></td>
+                    <td><a href="{{ route('editarsponsor',[$item->id]) }}"> Editar </a></td>
                 </tr>
                 @endforeach
             </tbody>

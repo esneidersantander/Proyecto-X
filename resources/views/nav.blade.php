@@ -19,8 +19,13 @@
                     </a>
                 </li>
                 <li class=" nav-item ">
-                    <a class="nav-link" href="{{ route('sponsores') }}">
-                        Sponsores
+                    <a class="nav-link" href="{{ route('inscritos') }}">
+                       Inscritos
+                    </a>
+                </li>
+                <li class=" nav-item ">
+                    <a class="nav-link" href="{{ route('eventos') }}">
+                        Eventos
                     </a>
                 </li>
                 <li class=" nav-item ">
@@ -34,8 +39,8 @@
                     </a>
                 </li>
                 <li class=" nav-item ">
-                    <a class="nav-link" href="{{ route('eventos') }}">
-                        Eventos
+                    <a class="nav-link" href="{{ route('sponsores') }}">
+                        Sponsores
                     </a>
                 </li>
                 @auth

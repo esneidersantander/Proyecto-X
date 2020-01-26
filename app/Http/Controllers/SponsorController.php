@@ -34,4 +34,24 @@ class SponsorController extends Controller
 
     }
 
+    public function editarSponsor($id)
+    {
+        $sponsores=Sponsor::find($id);
+        return view('editarsponsores',compact('sponsores'));
+    }
+    public function actualizarSponsor(Request $request, $id)
+    {
+        if($request->hasFile('imagen')){
+            $file=$request->file('imagen');
+            $name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/sponsores', $name);
+        }
+        $datos = array(
+            'imagen'=> $name,
+            'nivel'=> $request->nivel,
+            'sitioweb' => $request->sitioweb,
+        );
+        Sponsor::whereId($id)->update($datos);
+        return redirect()->route('sponsores');
+    }
 }

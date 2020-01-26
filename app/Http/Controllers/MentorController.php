@@ -41,4 +41,32 @@ class MentorController extends Controller
         return redirect()->route('mentores');
 
     }
+    public function editarMentor($id)
+    {
+        $mentores=Mentor::find($id);
+        return view('editarmentores',compact('mentores'));
+    }
+    public function actualizarMentor(Request $request, $id){
+        if($request->hasFile('foto')){
+            $file=$request->file('foto');
+            $name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/mentores', $name);
+        }
+        
+        $datos = array(
+            'foto'=> $name,
+           'nombre' => $request->nombre,
+           'especialidad' => $request->especialidad,
+           'descripcion' => $request->descripcion,
+           'facebook' => $request->facebook,
+           'twitter' => $request->twitter,
+           'linkedin' => $request->linkedin,
+           'instagram' => $request->instagram,
+           'email' => $request->email,
+           'sitioweb' => $request->sitioweb,
+        );
+        
+        Mentor::whereId($id)->update($datos);
+        return redirect()->route('mentores');
+    }
 }

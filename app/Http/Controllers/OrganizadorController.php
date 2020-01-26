@@ -39,4 +39,31 @@ class OrganizadorController extends Controller
         return redirect()->route('organizadores');
 
     }
+    public function editarOrganizador($id)
+    {
+        $organizadores=Organizador::find($id);
+        return view('editarorganizador',compact('organizadores'));
+    }
+    public function actualizarOrganizador(Request $request, $id){
+        if($request->hasFile('imagen')){
+            $file=$request->file('imagen');
+            $name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/organizadores', $name);
+        }
+        
+        $datos = array(
+            'imagen'=> $name,
+           'nombre' => $request->nombre,
+           'apellido' => $request->apellido,
+           'facebook' => $request->facebook,
+           'twitter' => $request->twitter,
+           'linkedin' => $request->linkedin,
+           'instagram' => $request->instagram,
+           'email' => $request->email,
+           'sitioweb' => $request->sitioweb,
+        );
+        
+        Organizador::whereId($id)->update($datos);
+        return redirect()->route('organizadores');
+    }
 }
