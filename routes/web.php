@@ -19,29 +19,26 @@ Route::get('/reporteinscritos','PerfilController@reporteInscritos')->name('repor
 Route::get('/about', 'ShowController@about')->name('about');
 
 
-Route::get('/eventos', 'EventoController@indexEvento')->name('eventos');
-Route::post('/ingresarevento', 'EventoController@guardarEvento')->name('ingresarevento');
-Route::get('/eliminarevento/{id}', 'EventoController@eliminarEvento')->name('eliminarevento');
-Route::get('/editarevento/{id}', 'EventoController@editarEvento')->name('editarevento');
-Route::post('/actualizarevento/{id}', 'EventoController@actualizarEvento')->name('actualizarevento');
-
-Route::get('/mentores', 'MentorController@indexMentor')->name('mentores');
-Route::post('/ingresarmentor', 'MentorController@guardarMentor')->name('ingresarmentor');
-Route::get('/eliminarmentor/{id}', 'MentorController@eliminarMentor')->name('eliminarmentor');
-Route::get('/editarmentor/{id}', 'MentorController@editarMentor')->name('editarmentor');
-Route::post('/actualizarmentor/{id}', 'MentorController@actualizarMentor')->name('actualizarmentor');
-
-Route::get('/sponsores', 'SponsorController@indexSponsor')->name('sponsores');
-Route::post('/ingresarsponsor', 'SponsorController@guardarSponsor')->name('ingresarsponsor');
-Route::get('/eliminarsponsor/{id}', 'SponsorController@eliminarSponsor')->name('eliminarsponsor');
-Route::get('/editarsponsor/{id}', 'SponsorController@editarSponsor')->name('editarsponsor');
-Route::post('/actualizarsponsor/{id}', 'SponsorController@actualizarSponsor')->name('actualizarsponsor');
-
-Route::get('/organizadores', 'OrganizadorController@indexOrganizador')->name('organizadores');
-Route::post('/ingresarorganizador', 'OrganizadorController@guardarOrganizador')->name('ingresarorganizador');
-Route::get('/eliminarorganizador/{id}', 'OrganizadorController@eliminarOrganizador')->name('eliminarorganizador');
-Route::get('/editarorganizador/{id}', 'OrganizadorController@editarOrganizador')->name('editarorganizador');
-Route::post('/actualizarorganizador/{id}', 'OrganizadorController@actualizarOrganizador')->name('actualizarorganizador');
+Route::get('/eventos', 'EventoController@indexEvento')->name('eventos')->middleware('auth');
+Route::post('/ingresarevento', 'EventoController@guardarEvento')->name('ingresarevento')->middleware('auth');
+Route::get('/eliminarevento/{id}', 'EventoController@eliminarEvento')->name('eliminarevento')->middleware('auth');
+Route::get('/editarevento/{id}', 'EventoController@editarEvento')->name('editarevento')->middleware('auth');
+Route::post('/actualizarevento/{id}', 'EventoController@actualizarEvento')->name('actualizarevento')->middleware('auth');
+Route::get('/mentores', 'MentorController@indexMentor')->name('mentores')->middleware('auth');
+Route::post('/ingresarmentor', 'MentorController@guardarMentor')->name('ingresarmentor')->middleware('auth');
+Route::get('/eliminarmentor/{id}', 'MentorController@eliminarMentor')->name('eliminarmentor')->middleware('auth');
+Route::get('/editarmentor/{id}', 'MentorController@editarMentor')->name('editarmentor')->middleware('auth');
+Route::post('/actualizarmentor/{id}', 'MentorController@actualizarMentor')->name('actualizarmentor')->middleware('auth');
+Route::get('/sponsores', 'SponsorController@indexSponsor')->name('sponsores')->middleware('auth');
+Route::post('/ingresarsponsor', 'SponsorController@guardarSponsor')->name('ingresarsponsor')->middleware('auth');
+Route::get('/eliminarsponsor/{id}', 'SponsorController@eliminarSponsor')->name('eliminarsponsor')->middleware('auth');
+Route::get('/editarsponsor/{id}', 'SponsorController@editarSponsor')->name('editarsponsor')->middleware('auth');
+Route::post('/actualizarsponsor/{id}', 'SponsorController@actualizarSponsor')->name('actualizarsponsor')->middleware('auth');
+Route::get('/organizadores', 'OrganizadorController@indexOrganizador')->name('organizadores')->middleware('auth');
+Route::post('/ingresarorganizador', 'OrganizadorController@guardarOrganizador')->name('ingresarorganizador')->middleware('auth');
+Route::get('/eliminarorganizador/{id}', 'OrganizadorController@eliminarOrganizador')->name('eliminarorganizador')->middleware('auth');
+Route::get('/editarorganizador/{id}', 'OrganizadorController@editarOrganizador')->name('editarorganizador')->middleware('auth');
+Route::post('/actualizarorganizador/{id}', 'OrganizadorController@actualizarOrganizador')->name('actualizarorganizador')->middleware('auth');
 
 
 Auth::routes(['register' => true]);

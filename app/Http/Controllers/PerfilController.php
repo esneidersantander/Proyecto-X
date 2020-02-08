@@ -54,7 +54,6 @@ class perfilController extends Controller
 	}
 	public function reporteInscritos(){
 		$inscritos=Perfil::all();
-		return PDF::loadView('reporteinscritos', ['inscritos'=>$inscritos])->stream('archivo.pdf');
+		return PDF::loadView('reporteinscritos', ['inscritos'=>$inscritos])->setPaper('a4','landscape')->stream('archivo.pdf');
 	}
-
 }

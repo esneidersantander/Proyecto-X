@@ -6,16 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
         <style>
         table {
-          width: 100%;
-          border-collapse: collapse;
-          border-spacing: 0;
-         
-          margin:20px;
-         }
+            padding: 50px;          
+        }
         
         
         
@@ -24,19 +19,21 @@
         </style>
     </head>
     <body>
-    <div class="container">
+    <br>
+    <h1 style="text-align: center">REPORTE DE ESTUDIANTES INSCRITOS.</h1>
+    <div>
     <div class="row">
-    <table id="ninscritos" class="table table-striped table-bordered" style="width:10%">
+    <table class="table" style="text-align: center">
     @csrf
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
-                <th>Telefono</th>
+                <th>Teléfono</th>
                 <th>Edad</th>
                 <th>Sexo</th>
-                <th>Talla camiceta</th>
+                <th>Talla camiseta</th>
             </tr>
         </thead>
         <tbody>
@@ -48,8 +45,26 @@
                 <td>{{$item->email}}</td>
                 <td>{{$item->telefono}}</td>
                 <td>{{$item->edad}}</td>
-                <td>{{$item->sexo}}</td>
-                <td>{{$item->tallacamisa}}</td>
+                @if($item->sexo==1)
+                <td>Femenino</td>
+                @elseif($item->sexo==2)
+                <td>Masculino</td>
+                @endif
+                @if($item->tallacamisa==1)
+                <td>XS</td>
+                @elseif($item->tallacamisa==2)
+                <td>S</td>
+                @elseif($item->tallacamisa==3)
+                <td>M</td>
+                @elseif($item->tallacamisa==4)
+                <td>L</td>
+                @elseif($item->tallacamisa==5)
+                <td>XL</td>
+                @elseif($item->tallacamisa==6)
+                <td>XXL</td>
+                @elseif($item->tallacamisa==0)
+                <td>No Identificado</td>
+                @endif    
             </tr>
         @endforeach
         </tbody>
@@ -58,23 +73,14 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
-                <th>Telefono</th>
+                <th>Teléfono</th>
                 <th>Edad</th>
                 <th>Sexo</th>
-                <th>Talla camiceta</th>
+                <th>Talla camiseta</th>
             </tr>
         </tfoot>
         </table>
     </div>
     </div>
-
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script> -->
-    <!-- <script>
-       $(document).ready(function() {
-            $('#ninscritos').DataTable();
-       } );
-    </script> -->
     </body>
 </html>

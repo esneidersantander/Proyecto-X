@@ -85,8 +85,12 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
         
-        <header class='ng-boot' data-ng-app-module='header' id='header'>
+  <header class='ng-boot' data-ng-app-module='header' id='header'>
   <div class="ts-branding topbar">
+
+             <a href="{{ url('/registrar') }}" class="button radius">
+                  login
+              </a>
   <div class="ts-tray-btn">
     <div class="logo-wrapper">
       <div class="logo"></div>
