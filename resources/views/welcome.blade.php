@@ -87,10 +87,6 @@
         
   <header class='ng-boot' data-ng-app-module='header' id='header'>
   <div class="ts-branding topbar">
-
-             <a href="{{ url('/registrar') }}" class="button radius">
-                  login
-              </a>
   <div class="ts-tray-btn">
     <div class="logo-wrapper">
       <div class="logo"></div>
@@ -232,7 +228,9 @@
 <li class='link link-startup-weekend/about no-tap up-theme-base-border-left-color'>
   <a href="{{ url('/about') }}" class="no-tap">About</a>
 </li>
-
+<li class='link link-startup-weekend/about no-tap up-theme-base-border-left-color'>
+  <a href="{{ url('login') }}" class="no-tap">Login</a>
+</li>
     
   </ul>
 </nav>
@@ -338,13 +336,9 @@
 
   <li class="unavailable">
   
-    <a href="" class="breadcrumb-item">Events</a>
+    <a href="#" class="breadcrumb-item">Events</a>
   
   </li>
-  
-  
-  
-
   <li class="current">
   
     <span class="breadcrumb-item">Startup Weekend Manabí Agrotech</span>

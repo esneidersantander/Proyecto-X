@@ -51,7 +51,8 @@
                     <input type="file" class="form-control" name="foto">
                 </div>
                 <br>
-                <input type="submit" class="btn btn-info" value="Guardar">
+                <input type="submit" class="btn border-success" value="Guardar">
+                <a href="{{ url('reportementor') }}" class="btn border-success ">Generar Reporte</a>
             </form>
         </div>
     </div>

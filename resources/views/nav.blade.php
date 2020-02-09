@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light navbar-expand-lg bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            Proyecto X
+           Startup Weekend
         </a>
         <button class="navbar-toggler" type="button" 
             data-toggle="collapse" 

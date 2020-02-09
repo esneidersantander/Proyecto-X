@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mentor;
+use PDF;
 
 class MentorController extends Controller
 {
@@ -69,4 +70,9 @@ class MentorController extends Controller
         Mentor::whereId($id)->update($datos);
         return redirect()->route('mentores');
     }
+    public function reporteMentor(){
+        $mentor=Mentor::all();
+        return PDF::loadView('reportementores', ['mentor'=>$mentor])->stream('archivo.pdf');
+    }
+    
 }

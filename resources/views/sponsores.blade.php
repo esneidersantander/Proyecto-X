@@ -30,7 +30,7 @@
                     <input type="file" class="form-control" name="imagen">
                 </div>
                 <br>
-                <input type="submit" class="btn btn-info" value="Guardar">
+                <input type="submit" class="btn border-success" value="Guardar">
             </form>
         </div>
     </div>

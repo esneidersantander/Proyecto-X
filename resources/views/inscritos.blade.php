@@ -75,7 +75,10 @@
             </tr>
         </tfoot>
         </table>
-        <a href="{{ url('reporteinscritos') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Generar Reporte</a>
+        <div class="text-center">
+        <a href="{{ url('reporteinscritos') }}" class="btn border-success btn-lg active" role="button" aria-pressed="true">Generar Reporte</a>
+        </div>
+        
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

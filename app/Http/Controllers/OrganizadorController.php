@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Organizador;
+use PDF;
+
 class OrganizadorController extends Controller
 {
     public function indexOrganizador()
@@ -65,5 +67,9 @@ class OrganizadorController extends Controller
         
         Organizador::whereId($id)->update($datos);
         return redirect()->route('organizadores');
+    }
+    public function reporteOrganizador(){
+      $organizador=Organizador::all();
+      return PDF::loadView('reporteorganizadores', ['organizador'=>$organizador])->stream('archivo.pdf');
     }
 }

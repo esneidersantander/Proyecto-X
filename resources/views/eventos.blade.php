@@ -27,7 +27,8 @@
           <input type="time" class="form-control" name="hora">
         </div>
         <br>
-        <input type="submit" class="btn btn-info" value="Guardar">
+        <input type="submit" class="btn border-success" value="Guardar">
+        <a href="{{ url('reporteeventos') }}" class="btn border-success ">Generar Reporte</a>
       </form>
     </div>
   </div>

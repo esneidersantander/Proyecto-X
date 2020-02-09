@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Evento;
+use PDF;
 
 class EventoController extends Controller
 {
@@ -42,6 +43,11 @@ class EventoController extends Controller
         $event->hora = $request->hora;
         $event->save();
         return redirect()->route('eventos');
+    }
+
+    public function reporteEvento(){
+        $evento=Evento::all();
+        return PDF::loadView('reporteeventos', ['eventos'=>$evento])->stream('archivo.pdf');
     }
     
 }

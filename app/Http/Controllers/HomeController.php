@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mentor;
+use App\Evento;
+use App\Perfil;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $perfil=Perfil::count();
+        $eventos=Evento::count();
+        $mentores=Mentor::count();
+        return view('home',compact('perfil','eventos','mentores'));
     }
+    
+
 }

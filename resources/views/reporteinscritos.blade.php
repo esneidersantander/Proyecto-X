@@ -11,16 +11,11 @@
         table {
             padding: 50px;          
         }
-        
-        
-        
-        
-        
         </style>
     </head>
     <body>
     <br>
-    <h1 style="text-align: center">REPORTE DE ESTUDIANTES INSCRITOS.</h1>
+    <h1 style="text-align: center">REPORTE DE ESTUDIANTES INSCRITOS</h1>
     <div>
     <div class="row">
     <table class="table" style="text-align: center">
