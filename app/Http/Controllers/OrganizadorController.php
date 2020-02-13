@@ -47,14 +47,29 @@ class OrganizadorController extends Controller
         return view('editarorganizador',compact('organizadores'));
     }
     public function actualizarOrganizador(Request $request, $id){
-        if($request->hasFile('imagen')){
-            $file=$request->file('imagen');
-            $name=time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/organizadores', $name);
-        }
         
+        $imagen_name=$request->hidden_imagen;
+        $imagen=$request->file('imagen');
+        if($imagen!=''){
+            $request->validate([
+                'nombre' =>'required',
+                'apellido' =>'required',
+                'email'=>'required',
+                'imagen'=>'required'
+            ]);
+            $imagen_name=time().$imagen->getClientOriginalName();
+            $imagen->move(public_path().'/images/organizadores',  $imagen_name);
+        }else{
+            $request->validate([
+                'nombre' =>'required',
+                'apellido' =>'required',
+                'email'=>'required',
+                'imagen'=>'required'
+            ]);
+
+        }
         $datos = array(
-            'imagen'=> $name,
+            'imagen'=> $imagen_name,
            'nombre' => $request->nombre,
            'apellido' => $request->apellido,
            'facebook' => $request->facebook,

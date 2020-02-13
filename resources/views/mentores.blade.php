@@ -52,7 +52,7 @@
                 </div>
                 <br>
                 <input type="submit" class="btn border-success" value="Guardar">
-                <a href="{{ url('reportementor') }}" class="btn border-success ">Generar Reporte</a>
+                <a href="{{ url('reportementor') }}" class="btn border-success "target="_blank">Generar Reporte</a>
             </form>
         </div>
     </div>

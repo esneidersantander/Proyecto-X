@@ -21,7 +21,7 @@ class MentorController extends Controller
             $file->move(public_path().'/images/mentores', $name);
         }
         $ment = new Mentor();
-        $ment->foto = $name;
+        $ment->foto =$name;
         $ment->nombre = $request->nombre;
         $ment->especialidad = $request->especialidad;
         $ment->descripcion = $request->descripcion;
@@ -48,14 +48,28 @@ class MentorController extends Controller
         return view('editarmentores',compact('mentores'));
     }
     public function actualizarMentor(Request $request, $id){
-        if($request->hasFile('foto')){
-            $file=$request->file('foto');
-            $name=time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/mentores', $name);
+        
+        $imagen=$request->hidden_imagen;
+        $imagen=$request->file('foto');
+        if($imagen!=''){
+            $request->validate([
+                'nombre' =>'required',
+                'especialidad' =>'required',
+                'email'=>'required',
+                'foto'=>'required'
+            ]);
+            $imagen_name=time().$imagen->getClientOriginalName();
+            $imagen->move(public_path().'/images/mentores',  $imagen_name); 
+        }else{
+            $request->validate([
+                'nombre' =>'required',
+                'especialidad' =>'required',
+                'email'=>'required'
+            ]); 
         }
         
         $datos = array(
-            'foto'=> $name,
+            'foto'=>$imagen_name,
            'nombre' => $request->nombre,
            'especialidad' => $request->especialidad,
            'descripcion' => $request->descripcion,
