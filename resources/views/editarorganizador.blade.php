@@ -11,11 +11,11 @@
                 <hr>
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" class="form-control" name="nombre"value="{{$organizadores->nombre}}">
+                    <input type="text" class="form-control" name="nombre"value="{{$organizadores->nombre}}" required>
                 </div>
                 <div class="form-group">
                     <label>Apellido</label>
-                    <input type="text" class="form-control" name="apellido"value="{{$organizadores->apellido}}">
+                    <input type="text" class="form-control" name="apellido"value="{{$organizadores->apellido}}" required>
                 </div>
                 <div class="form-group">
                     <label>Facebook</label>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" name="email"value="{{$organizadores->email}}">
+                    <input type="email" class="form-control" name="email"value="{{$organizadores->email}}" required>
                 </div>
                 <div class="form-group">
                     <label>Foto</label>

@@ -12,7 +12,7 @@
                 <hr>
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" class="form-control" name="nombre">
+                    <input type="text" class="form-control" name="nombre" required>
                 </div>
                 <div class="form-group">
                     <label>Especialidad</label>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                            <input type="email" class="form-control" name="email">
+                            <input type="email" class="form-control" name="email" required>
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
@@ -58,7 +58,7 @@
     </div>
     <hr>
     <div class="table-responsive">
-        <table class="table" border="1">
+        <table class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
                     <th scope="col">Nombre</th>

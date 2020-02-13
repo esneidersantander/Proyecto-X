@@ -12,7 +12,7 @@
                 <hr>
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" class="form-control" name="nombre"value="{{$mentores->nombre}}">
+                    <input type="text" class="form-control" name="nombre"value="{{$mentores->nombre}}" required>
                 </div>
                 <div class="form-group">
                     <label>Especialidad</label>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                            <input type="email" class="form-control" name="email"value="{{$mentores->email}}">
+                            <input type="email" class="form-control" name="email"value="{{$mentores->email}}" required>
                 </div>
                 <div class="form-group">
                 <label>Foto</label>
