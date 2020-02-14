@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input type="file" class="form-control" name="imagen">
+                    <input type="file" class="form-control" name="imagen" required>
                 </div>
                 <br>
                 <input type="submit" class="btn border-success" value="Guardar">

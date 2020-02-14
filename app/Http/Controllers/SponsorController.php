@@ -41,13 +41,15 @@ class SponsorController extends Controller
     }
     public function actualizarSponsor(Request $request, $id)
     {
+        $image_name = $request->hidden_image;
+        $imagen = $request->file('imagen');
         if($request->hasFile('imagen')){
             $file=$request->file('imagen');
-            $name=time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/sponsores', $name);
+            $image_name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/sponsores', $image_name);
         }
         $datos = array(
-            'imagen'=> $name,
+            'imagen' => $image_name,
             'nivel'=> $request->nivel,
             'sitioweb' => $request->sitioweb,
         );

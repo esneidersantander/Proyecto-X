@@ -14,7 +14,7 @@
                     <label>Nivel</label>
                     {{--         <input type="text" class="form-control" name="nivel"> --}}
 
-                    <select name="nivel" class="form-control">
+                    <select name="nivel" class="form-control" required>
                         <option>Seleccione un nivel</option>
                         <option value="gold">GOLD</option>
                         <option value="silver">SILVER</option>
@@ -23,11 +23,11 @@
                 </div>
                 <div class="form-group">
                     <label>Sitio Web</label>
-                    <input type="text" class="form-control" name="sitioweb">
+                    <input type="text" class="form-control" name="sitioweb" required>
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input type="file" class="form-control" name="imagen">
+                    <input type="file" class="form-control" name="imagen" required>
                 </div>
                 <br>
                 <input type="submit" class="btn border-success" value="Guardar">

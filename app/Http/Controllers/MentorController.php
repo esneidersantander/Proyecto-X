@@ -10,18 +10,18 @@ class MentorController extends Controller
 {
     public function indexMentor()
     {
-        $mentores=Mentor::all();
-        return view('mentores',compact('mentores'));
+        $mentores = Mentor::all();
+        return view('mentores', compact('mentores'));
     }
     public function guardarMentor(Request $request)
     {
-        if($request->hasFile('foto')){
-            $file=$request->file('foto');
-            $name=time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/mentores', $name);
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $name = time() . $file->getClientOriginalName();
+            $file->move(public_path() . '/images/mentores', $name);
         }
         $ment = new Mentor();
-        $ment->foto =$name;
+        $ment->foto = $name;
         $ment->nombre = $request->nombre;
         $ment->especialidad = $request->especialidad;
         $ment->descripcion = $request->descripcion;
@@ -37,56 +37,56 @@ class MentorController extends Controller
 
     public function eliminarMentor($id)
     {
-        $objetivo=Mentor::find($id);
+        $objetivo = Mentor::find($id);
         $objetivo->delete();
         return redirect()->route('mentores');
-
     }
     public function editarMentor($id)
     {
-        $mentores=Mentor::find($id);
-        return view('editarmentores',compact('mentores'));
+        $mentores = Mentor::find($id);
+        return view('editarmentores', compact('mentores'));
     }
-    public function actualizarMentor(Request $request, $id){
-        
-        $imagen=$request->hidden_imagen;
-        $imagen=$request->file('foto');
-        if($imagen!=''){
+    public function actualizarMentor(Request $request, $id)
+    {
+
+        $image_name = $request->hidden_image;
+        $imagen = $request->file('foto');
+        if ($imagen != '') {
             $request->validate([
                 'nombre' =>'required',
                 'especialidad' =>'required',
                 'email'=>'required',
-                'foto'=>'required'
+                'foto'         =>  'image|max:2048'
             ]);
-            $imagen_name=time().$imagen->getClientOriginalName();
-            $imagen->move(public_path().'/images/mentores',  $imagen_name); 
-        }else{
+            $image_name = time() . $imagen->getClientOriginalName();
+            $imagen->move(public_path() . '/images/mentores',  $image_name);
+        } else {
             $request->validate([
                 'nombre' =>'required',
                 'especialidad' =>'required',
                 'email'=>'required'
-            ]); 
+            ]);
         }
-        
+
         $datos = array(
-            'foto'=>$imagen_name,
-           'nombre' => $request->nombre,
-           'especialidad' => $request->especialidad,
-           'descripcion' => $request->descripcion,
-           'facebook' => $request->facebook,
-           'twitter' => $request->twitter,
-           'linkedin' => $request->linkedin,
-           'instagram' => $request->instagram,
-           'email' => $request->email,
-           'sitioweb' => $request->sitioweb,
+            'foto' => $image_name,
+            'nombre' => $request->nombre,
+            'especialidad' => $request->especialidad,
+            'descripcion' => $request->descripcion,
+            'facebook' => $request->facebook,
+            'twitter' => $request->twitter,
+            'linkedin' => $request->linkedin,
+            'instagram' => $request->instagram,
+            'email' => $request->email,
+            'sitioweb' => $request->sitioweb,
         );
-        
+
         Mentor::whereId($id)->update($datos);
         return redirect()->route('mentores');
     }
-    public function reporteMentor(){
-        $mentor=Mentor::all();
-        return PDF::loadView('reportementores', ['mentor'=>$mentor])->stream('archivo.pdf');
+    public function reporteMentor()
+    {
+        $mentor = Mentor::all();
+        return PDF::loadView('reportementores', ['mentor' => $mentor])->stream('archivo.pdf');
     }
-    
 }

@@ -49,7 +49,7 @@
                         href="#"
                         onclick="event.preventDefault(); 
                         document.getElementById('logout-form').submit();">
-                            Cerrar sesion
+                            Cerrar sesión
                         </a>
                     </li>    
                 @else    

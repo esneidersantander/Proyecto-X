@@ -51,5 +51,5 @@ Route::get('/editarorganizador/{id}', 'OrganizadorController@editarOrganizador')
 Route::post('/actualizarorganizador/{id}', 'OrganizadorController@actualizarOrganizador')->name('actualizarorganizador')->middleware('auth');
 Route::get('/reporteorganizador','OrganizadorController@reporteOrganizador')->name('reporteorganizador')->middleware('auth');
 
-Auth::routes(['register' => true]);
+Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');

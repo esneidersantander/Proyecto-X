@@ -6,7 +6,7 @@
 <div class="container">
 <div class="row">
         <div class="col-12 col-lg-12">
-            <h1 class="display-4 .text-success text-center">Sistema de admin para  Startup Weekend</h1>
+            <h1 class="display-4 .text-success text-center">Sistema Adm. para Startup Weekend</h1>
         </div> 
 </div>
 <br>
@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">{{$perfil}}</h5>
                     <div class="text-center">
-                    <a href="{{ url('reporteinscritos') }}" class="btn border-success ">Reporte</a>
+                    <a href="{{ url('reporteinscritos') }}" class="btn border-success " target="_blank">Reporte</a>
                     </div>
                    
                 </div>
@@ -30,7 +30,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-center">{{$eventos}}</h5>
                         <div class="text-center">
-                            <a href="{{ url('reporteeventos') }}" class="btn border-success ">Reporte</a>
+                            <a href="{{ url('reporteeventos') }}" class="btn border-success " target="_blank">Reporte</a>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                                 <div class="card-body">
                                         <h5 class="card-title text-center">{{$mentores}}</h5>
                                         <div class="text-center">
-                                            <a href="{{ url('reportementor') }}" class="btn border-success ">Reporte</a>
+                                            <a href="{{ url('reportementor') }}" class="btn border-success " target="_blank">Reporte</a>
                                         </div>
                                 </div>
                         </div>

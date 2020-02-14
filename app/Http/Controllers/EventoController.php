@@ -46,7 +46,7 @@ class EventoController extends Controller
     }
 
     public function reporteEvento(){
-        $evento=Evento::all();
+        $evento=Evento::orderBy('dia')->get();
         return PDF::loadView('reporteeventos', ['eventos'=>$evento])->stream('archivo.pdf');
     }
     

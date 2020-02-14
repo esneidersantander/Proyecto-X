@@ -16,11 +16,11 @@
                 </div>
                 <div class="form-group">
                     <label>Especialidad</label>
-                    <input type="text" class="form-control" name="especialidad">
+                    <input type="text" class="form-control" name="especialidad" required>
                 </div>
                 <div class="form-group">
                     <label>Descripcion</label>
-                    <input type="text" class="form-control" name="descripcion">
+                    <input type="text" class="form-control" name="descripcion" required>
                 </div>
                 <div class="form-group">
                     <label>Facebook</label>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input type="file" class="form-control" name="foto">
+                    <input type="file" class="form-control" name="foto" required>
                 </div>
                 <br>
                 <input type="submit" class="btn border-success" value="Guardar">

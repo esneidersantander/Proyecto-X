@@ -12,11 +12,7 @@
                 <hr>
                 <div class="form-group">
                     <label>Nivel</label>
-
-                    <input type="text" class="form-control" name="nivel" value="{{$sponsores->nivel}}">
-                    <br>
-
-                    <select name="nivel" class="form-control">
+                    <select name="nivel" class="form-control" required>
                         <option>Seleccione un nivel</option>
                         <option value="gold">GOLD</option>
                         <option value="silver">SILVER</option>
@@ -25,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label>Sitio Web</label>
-                    <input type="text" class="form-control" name="sitioweb"value="{{$sponsores->sitioweb}}">
+                    <input type="text" class="form-control" name="sitioweb"value="{{$sponsores->sitioweb}}" required>
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
@@ -34,6 +30,7 @@
                     </div>
                     <br>
                     <input type="file" class="form-control" name="imagen">
+                    <input type="hidden" name="hidden_image" value="{{ $sponsores->imagen }}" />
                 </div>
                 <br>
                 <input type="submit" class="btn btn-info" value="Actualizar">

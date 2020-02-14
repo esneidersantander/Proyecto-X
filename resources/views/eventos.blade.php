@@ -12,19 +12,19 @@
         <hr>
         <div class="form-group">
           <label>Actividad</label>
-          <input type="text" class="form-control" name="actividad">
+          <input type="text" class="form-control" name="actividad" required>
         </div>
         <div class="form-group">
           <label>Descripcion del Evento</label>
-          <input type="text" class="form-control" name="descripcion">
+          <input type="text" class="form-control" name="descripcion" required>
         </div>
         <div class="form-group">
           <label>Día del evento</label>
-          <input type="date" class="form-control" name="dia">
+          <input type="date" class="form-control" name="dia" required>
         </div>
         <div class="form-group">
           <label>Hora</label>
-          <input type="time" class="form-control" name="hora">
+          <input type="time" class="form-control" name="hora" required>
         </div>
         <br>
         <input type="submit" class="btn border-success" value="Guardar">
