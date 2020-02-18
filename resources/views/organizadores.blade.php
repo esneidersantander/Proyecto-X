@@ -81,8 +81,8 @@
                     <td>{{ $item ->sitioweb }}</td>
                     <td>{{ $item ->email }}</td>
                     <td><img src="images/organizadores/{{ $item ->imagen }}" alt=""class="img-thumbnail" width="75"></td>
-                    <td><a href="{{ route('eliminarorganizador',[$item->id]) }}"> Eliminar </a></td>
-                    <td><a href="{{ route('editarorganizador',[$item->id]) }}"> Editar </a></td>
+                    <td><a class="btn btn-danger btn-sm" href="{{ route('eliminarorganizador',[$item->id]) }}"> Eliminar </a></td>
+                    <td><a class="btn btn-primary btn-sm" href="{{ route('editarorganizador',[$item->id]) }}"> Editar </a></td>
                 </tr>
                 @endforeach
             </tbody>

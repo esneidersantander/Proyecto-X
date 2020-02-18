@@ -52,8 +52,8 @@
                     <td>{{ $item ->nivel }}</td>
                     <td>{{ $item ->sitioweb }}</td>
                     <td><img src="images/sponsores/{{ $item ->imagen }}" alt="" class="img-thumbnail" width="100"></td>
-                    <td><a href="{{ route('eliminarsponsor',[$item->id]) }}"> Eliminar </a></td>
-                    <td><a href="{{ route('editarsponsor',[$item->id]) }}"> Editar </a></td>
+                    <td><a class="btn btn-danger btn-sm" href="{{ route('eliminarsponsor',[$item->id]) }}"> Eliminar </a></td>
+                    <td><a class="btn btn-primary btn-sm" href="{{ route('editarsponsor',[$item->id]) }}"> Editar </a></td>
                 </tr>
                 @endforeach
             </tbody>

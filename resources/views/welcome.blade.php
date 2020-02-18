@@ -647,11 +647,6 @@
                         <i class="fab fa-instagram"></i>
                       </a>
                       @endif
-                      @if($item->email !=null)
-                      <a href="{{$item->email}}" target="_blank">
-                        <i class="fas fa-envelope">&nbsp;</i>
-                      </a>
-                      @endif
                       @if($item->sitioweb !=null)
                       <a href="{{$item->sitioweb}}" target="_blank">
                         <i class="fas fa-home"></i>
@@ -734,7 +729,7 @@
                     <ul class="large-block-grid-3">
 
                       @foreach($sponsores as $item)
-                      @if($item->nivel='gold')
+                      @if(($item->nivel)=='gold')
                       <li class="img-wrapper-legacy scale-x">
                         <a href="{{$item->sitioweb}}" target="_blank">
                           <img src="images/sponsores/{{$item->imagen}}" class="img-responsive">
@@ -757,10 +752,10 @@
                   <div class="large-15 columns">
                     <ul class="large-block-grid-3">
                       @foreach($sponsores as $item)
-                      @if($item->nivel='silver')
+                      @if(($item->nivel)=='silver')
                       <li class="img-wrapper-legacy scale-x">
                         <a href="{{$item->sitioweb}}" target="_blank">
-                          <img src="{{$item->foto}}" class="img-responsive">
+                          <img src="images/sponsores/{{$item->imagen}}" class="img-responsive">
                         </a>
                       </li>
                       @endif
@@ -824,11 +819,6 @@
                               <i class=" fab fa-instagram"></i>
                         </a>
                         @endif
-                        @if($item->email !=null)
-                        <a href="{{$item->email}}" target="_blank"">
-                              <i class=" fas fa-envelope">&nbsp;</i>
-                        </a>
-                        @endif
                         @if($item->sitioweb !=null)
                         <a href="{{$item->sitioweb}}" target="_blank"">
                               <i class=" fas fa-home"></i>
@@ -861,22 +851,19 @@
                       <br><span class="job-title">Manager</span>
 
                       <br>
-                      <a href="" target="_blank">
+                      <a href="https://www.facebook.com/LimberthEsneiderSantanderAcivar" target="_blank">
                         <i class="fab fa-facebook">&nbsp;</i>
                       </a>
-                      <a href="" target="_blank">
+                      <a href="https://www.twitter.com/" target="_blank">
                         <i class="fab fa-twitter">&nbsp;</i>
                       </a>
-                      <a href="" target="_blank">
+                      <a href="https://www.linkedin.com/" target="_blank">
                         <i class="fab fa-linkedin-in">&nbsp;</i>
                       </a>
-                      <a href="" target="_blank"">
+                      <a href="https://www.instagram.com/" target="_blank"">
           <i class=" fab fa-instagram"></i>
                       </a>
-                      <a href="" target="_blank"">
-          <i class=" fas fa-envelope">&nbsp;</i>
-                      </a>
-                      <a href="" target="_blank"">
+                      <a href="https://www.hello.com/" target="_blank"">
           <i class=" fas fa-home"></i>
                       </a>
                     </h2>
@@ -896,7 +883,7 @@
                 <div class="row" id="event-blog">
                   <div class="large-15 columns grid-heading">
                     <h2>Event Blog</h2>
-                    <h4><a href="/ecuador/calceta--manabi-ecuador/blog">See Full Blog</a></h4>
+                    <h4><a href="http://www.techstars.com">See Full Blog</a></h4>
                   </div><!-- .grid-heading -->
                 </div><!-- #event-blog -->
 
@@ -909,7 +896,7 @@
 
                 <div class="row">
                   <div class="small-15 columns grid-heading">
-                    <h4><a href="/ecuador/calceta--manabi-ecuador/blog">Read posts from other events in Calceta,
+                    <h4><a href="http://www.techstars.com">Read posts from other events in Calceta,
                         Manabí</a></h4>
                   </div>
                 </div>
@@ -941,8 +928,8 @@
 
                 <li><a href="">Get Involved</a></li>
                 <li><a href="">Blog</a></li>
-                <li><a href="" target="_blank">Privacy Policy</a></li>
-                <li><a href="" target="_blank">Terms of Use</a></li>
+                <li><a href="http://www.techstars.com/privacy-policy" target="_blank">Privacy Policy</a></li>
+                <li><a href="http://www.techstars.com/terms-of-use/" target="_blank">Terms of Use</a></li>
               </ul>
             </div>
 
@@ -960,10 +947,10 @@
               <h3>Connect</h3>
               <ul class="undecorated-list">
                 <li><a href="">Calceta, Manabí Leaders</a></li>
-                <li><a href="" target="_blank">Techstars</a></li>
-                <li><a href="">Careers</a></li>
-                <li><a href="" target="_blank">Facebook</a></li>
-                <li><a href="" target="_blank">Twitter</a></li>
+                <li><a href="http://www.techstars.com" target="_blank">Techstars</a></li>
+                <li><a href="http://www.techstars.com/jobs/">Careers</a></li>
+                <li><a href="https://www.facebook.com/techstars" target="_blank">Facebook</a></li>
+                <li><a href="https://twitter.com/techstars" target="_blank">Twitter</a></li>
               </ul>
             </div>
           </div><!-- .row -->
@@ -1035,7 +1022,7 @@
                     </li>
 
                     <li>
-                      <a href="" target="_blank" title="Google for Startups">
+                      <a href="https://startup.google.com/intl/es/" target="_blank" title="Google for Startups">
                         <img src="/images/logos/GoogleForStartupsLarge.png" />
                       </a>
                     </li>

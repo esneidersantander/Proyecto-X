@@ -56,9 +56,9 @@ class OrganizadorController extends Controller
                 'email' => 'required',
                 'imagen'         =>  'image|max:2048'
             ]);
-            $file=$request->file('imagen');
-            $image_name=time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/organizadores', $image_name);
+            $file = $request->file('imagen');
+            $image_name = time() . $file->getClientOriginalName();
+            $file->move(public_path() . '/images/organizadores', $image_name);
         } else {
             $request->validate([
                 'nombre' => 'required',

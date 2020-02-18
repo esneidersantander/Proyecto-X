@@ -52,8 +52,8 @@
           <td>{{ $item ->descripcion }}</td>
           <td>{{ $item ->hora }}</td>
           <td>{{ $item ->dia }}</td>
-          <td><a href="{{ route('eliminarevento',[$item->id]) }}"> Eliminar </a></td>
-          <td><a href="{{ route('editarevento',[$item->id]) }}"> Editar </a></td>
+          <td><a class="btn btn-danger btn-sm" href="{{ route('eliminarevento',[$item->id]) }}"> Eliminar </a></td>
+          <td><a class="btn btn-primary btn-sm" href="{{ route('editarevento',[$item->id]) }}"> Editar </a></td>
         </tr>
         @endforeach
       </tbody>

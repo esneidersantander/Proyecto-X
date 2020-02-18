@@ -101,23 +101,23 @@
             </div>
             <span class="tri-down"></span>
             <div class="ts-tray-container">
-              <a href="" target="_blank">
-                <img class="logo-225" src="/images/logos/ts-logo-color.png">
+              <a href="http://www.techstars.com" target="_blank">
+                <img class="logo-225" src="/images/ts-logo-color.png">
               </a>
               Techstars is a global network that helps entrepeneurs succeed.
               <hr>
-              <a href="" target="_blank">
-                <img class="logo-260" src="/images/logos/sd_lockup_logo.svg">
+              <a href="https://www.startupdigest.com" target="_blank">
+                <img class="logo-260" src="/images/sd_lockup_logo.svg">
               </a>
               A curated source for everything entrepreneurial in your community.
               <hr>
-              <a href="" target="_blank">
-                <img class="logo-260" src="/images/logos/sw_lockup_logo.svg">
+              <a href="https://startupweek.co/" target="_blank">
+                <img class="logo-260" src="/images/sw_lockup_logo.svg">
               </a>
               Startup Week: Celebrating entrepreneurs is communities across the globe.
               <hr>
-              <a href="" target="_blank">
-                <img class="logo-260" src="/images/logos/sw-logo-black.png">
+              <a href="https://startupweekend.org/" target="_blank">
+                <img class="logo-260" src="/images/sw-logo-black.png">
               </a>
               Start building your future in just 54 hours. Learn, Network, Startup.
               <hr>
@@ -161,7 +161,7 @@
               <div class='justified'>
 
                 <div class='header__logo program-logo'>
-                  <a href="/" class='header__logo-image' >
+                  <a href="/" class='header__logo-image'>
                     <!-- < %- @render_partial "logos/#{ @program }" %> -->
 
                     <img src="/images/logos/sw-logo-black.png" class="logo-swe" />
@@ -240,6 +240,9 @@
 
 
                       </li>
+                      <li class='link link-startup-weekend/about no-tap up-theme-base-border-left-color'>
+                        <a href="{{ url('login') }}" class="no-tap">Login</a>
+                      </li>
 
 
                     </ul>
@@ -279,13 +282,13 @@
         <br><br>
         @if($errors->any())
         <div class="alert alert-danger alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h4> Atención:</h4>
-            <ul>
-                @foreach( $errors->all() as $error)
-                <li>{{ $error}}</li>
-                @endforeach
-            </ul>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <h4> Atención:</h4>
+          <ul>
+            @foreach( $errors->all() as $error)
+            <li>{{ $error}}</li>
+            @endforeach
+          </ul>
         </div>
         @endif
         <br><br>
@@ -294,31 +297,35 @@
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Dirección de correo electrónico</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" name="email" placeholder="Dirección de correo electrónico" value="{{ old('email') }}" required>
+              <input type="email" class="form-control" name="email" placeholder="Dirección de correo electrónico"
+                value="{{ old('email') }}" required>
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Nombre:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}" required>
+              <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}"
+                required>
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Apellido:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="{{ old('apellido') }}"required>
+              <input type="text" class="form-control" name="apellido" placeholder="Apellido"
+                value="{{ old('apellido') }}" required>
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Número de teléfono celular:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="telefono" placeholder="Número de teléfono celular" value="{{ old('telefono') }}" required>
+              <input type="text" class="form-control" name="telefono" placeholder="Número de teléfono celular"
+                value="{{ old('telefono') }}" required>
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Perfil:</label>
             <div class="col-sm-10">
-              <select class="combobox form-control" name="tipo" required >
+              <select class="combobox form-control" name="tipo" required>
                 <option value="" selected="selected">Seleccionar Perfil</option>
 
                 <option value="1">Desarrollador</option>
@@ -332,7 +339,7 @@
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Nivel de Educación:</label>
             <div class="col-sm-10">
-              <select class="combobox form-control" name="niveleducacion" required >
+              <select class="combobox form-control" name="niveleducacion" required>
                 <option value="" selected="selected">Seleccionar Nivel de Educación</option>
 
                 <option value="1">Aun no término la escuela</option>
@@ -348,7 +355,8 @@
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">¿Tiene alguna necesidad única?:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="necesidad" placeholder="¿Tiene alguna necesidad única?"value="{{ old('necesidad') }}" required>
+              <input type="text" class="form-control" name="necesidad" placeholder="¿Tiene alguna necesidad única?"
+                value="{{ old('necesidad') }}" required>
             </div>
           </div>
           <div class="form-group row">
@@ -371,7 +379,7 @@
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Talla Camiseta:</label>
             <div class="col-sm-10">
-              <select class="combobox form-control" name="tallacamisa" required >
+              <select class="combobox form-control" name="tallacamisa" required>
                 <option value="" selected="selected">Seleccionar talla</option>
 
                 <option value="1">XS</option>
@@ -440,33 +448,32 @@
               <div class="small-half-column large-5 columns">
                 <h3>Calceta, Manabí</h3>
                 <ul class="undecorated-list">
-                  <li><a href="">Home</a></li>
-                  <li><a href="">Information</a></li>
-                  <li><a href="">Get Involved</a></li>
-                  <li><a href="">Blog</a></li>
-                  <li><a href="" target="_blank">Privacy Policy</a></li>
-                  <li><a href="" target="_blank">Terms of Use</a></li>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Information</a></li>
+                  <li><a href="#">Get Involved</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="http://www.techstars.com/privacy-policy" target="_blank">Privacy Policy</a></li>
+                  <li><a href="http://www.techstars.com/terms-of-use/" target="_blank">Terms of Use</a></li>
                 </ul>
               </div>
 
               <div class="small-half-column large-5 columns">
                 <h3>Our Programs</h3>
                 <ul class="undecorated-list">
-                  <li><a href="">Overview</a></li>
-                  <li><a href="">Startup Weekend</a></li>
-
-                  <li><a href="">Techstars Startup Digest</a></li>
+                  <li><a href="#">Overview</a></li>
+                  <li><a href="#">Startup Weekend</a></li>
+                  <li><a href="#">Techstars Startup Digest</a></li>
                 </ul>
               </div>
 
               <div class="small-15 large-5 columns">
                 <h3>Connect</h3>
                 <ul class="undecorated-list">
-                  <li><a href="">Calceta, Manabí Leaders</a></li>
-                  <li><a href="" target="_blank">Techstars</a></li>
-                  <li><a href="">Careers</a></li>
-                  <li><a href="" target="_blank">Facebook</a></li>
-                  <li><a href="" target="_blank">Twitter</a></li>
+                  <li><a href="#">Calceta, Manabí Leaders</a></li>
+                  <li><a href="http://www.techstars.com" target="_blank">Techstars</a></li>
+                  <li><a href="http://www.techstars.com/jobs/">Careers</a></li>
+                  <li><a href="https://www.facebook.com/techstars" target="_blank">Facebook</a></li>
+                  <li><a href="https://twitter.com/techstars" target="_blank">Twitter</a></li>
                 </ul>
               </div>
             </div><!-- .row -->
@@ -533,13 +540,13 @@
 
                       <li>
                         <a href="http://www.go.co/" target="_blank" title=".CO">
-                          <img src="/images/logos/partners/co.png" />
+                          <img src="/images/logos/co.png" />
                         </a>
                       </li>
 
                       <li>
-                        <a href="" target="_blank" title="Google for Startups">
-                          <img src="/images/logos/partners/GoogleForStartupsLarge.png" />
+                        <a href="https://startup.google.com/intl/es/" target="_blank" title="Google for Startups">
+                          <img src="/images/logos/GoogleForStartupsLarge.png" />
                         </a>
                       </li>
 
